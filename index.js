@@ -1,20 +1,10 @@
 const TelegramApi = require('node-telegram-bot-api')
+const {investOptions} = require('./options')
 
 const token = "5982322981:AAHC8yomtCiB7Z_Lg5udp4cJOuBugI5ploI";
 
 const bot = new TelegramApi(token, {polling: true})
 
-const investOptions = {
-    reply_markup: JSON.stringify({
-        inline_keyboard: [
-            [{text: 'Сбер', callback_data: 'sber'}],
-            [{text: 'Лукойл', callback_data: 'sber'}],
-            [{text: 'Газпром', callback_data: 'sber'}],
-            [{text: 'ФСК ЕС', callback_data: 'sber'}],
-            [{text: 'ГОВНО', callback_data: 'sber'}],
-        ]
-    })
-}
 
 bot.setMyCommands([
     {command: '/start', description: 'Приветствие'},
